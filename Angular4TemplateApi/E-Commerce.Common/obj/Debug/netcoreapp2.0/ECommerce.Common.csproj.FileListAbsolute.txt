@@ -1,0 +1,11 @@
+D:\AngularJS\Projects\e-commerce-api\e-commerce-api\E-Commerce.Common\bin\Debug\netcoreapp2.0\ECommerce.Common.deps.json
+D:\AngularJS\Projects\e-commerce-api\e-commerce-api\E-Commerce.Common\bin\Debug\netcoreapp2.0\ECommerce.Common.dll
+D:\AngularJS\Projects\e-commerce-api\e-commerce-api\E-Commerce.Common\bin\Debug\netcoreapp2.0\ECommerce.Common.pdb
+D:\AngularJS\Projects\e-commerce-api\e-commerce-api\E-Commerce.Common\bin\Debug\netcoreapp2.0\ECommerce.Entities.dll
+D:\AngularJS\Projects\e-commerce-api\e-commerce-api\E-Commerce.Common\bin\Debug\netcoreapp2.0\ECommerce.Entities.pdb
+D:\AngularJS\Projects\e-commerce-api\e-commerce-api\E-Commerce.Common\obj\Debug\netcoreapp2.0\ECommerce.Common.csprojResolveAssemblyReference.cache
+D:\AngularJS\Projects\e-commerce-api\e-commerce-api\E-Commerce.Common\obj\Debug\netcoreapp2.0\ECommerce.Common.csproj.CoreCompileInputs.cache
+D:\AngularJS\Projects\e-commerce-api\e-commerce-api\E-Commerce.Common\obj\Debug\netcoreapp2.0\ECommerce.Common.AssemblyInfoInputs.cache
+D:\AngularJS\Projects\e-commerce-api\e-commerce-api\E-Commerce.Common\obj\Debug\netcoreapp2.0\ECommerce.Common.AssemblyInfo.cs
+D:\AngularJS\Projects\e-commerce-api\e-commerce-api\E-Commerce.Common\obj\Debug\netcoreapp2.0\ECommerce.Common.dll
+D:\AngularJS\Projects\e-commerce-api\e-commerce-api\E-Commerce.Common\obj\Debug\netcoreapp2.0\ECommerce.Common.pdb

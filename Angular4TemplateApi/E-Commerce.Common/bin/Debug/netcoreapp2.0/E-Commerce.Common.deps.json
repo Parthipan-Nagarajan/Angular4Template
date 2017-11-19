@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": "d0444baaa381b18fab68c6d0c1c20fc844908666"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "E-Commerce.Common/1.0.0": {
+        "dependencies": {
+          "E-Commerce.Entities": "1.0.0",
+          "FluentValidation": "7.2.1"
+        },
+        "runtime": {
+          "E-Commerce.Common.dll": {}
+        }
+      },
+      "FluentValidation/7.2.1": {
+        "runtime": {
+          "lib/netstandard1.0/FluentValidation.dll": {}
+        }
+      },
+      "E-Commerce.Entities/1.0.0": {
+        "runtime": {
+          "E-Commerce.Entities.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "E-Commerce.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FluentValidation/7.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cQza24pZdc1aPziHNPOazZzg2/5l8S1zbnIpjKMBq8kopRAGj+YXqGyP8Xo4OIqV16SccmzU1hhKV3Q7FyXglg==",
+      "path": "fluentvalidation/7.2.1",
+      "hashPath": "fluentvalidation.7.2.1.nupkg.sha512"
+    },
+    "E-Commerce.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

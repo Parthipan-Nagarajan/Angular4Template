@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="7.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\E-Commerce.Common\ECommerce.Common.csproj" />
+    <ProjectReference Include="..\E-Commerce.Data.Interface\ECommerce.Data.Interface.csproj" />
+    <ProjectReference Include="..\E-Commerce.Entities\ECommerce.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
