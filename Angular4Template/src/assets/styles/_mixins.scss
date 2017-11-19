@@ -1,0 +1,190 @@
+// stylelint-disable selector-no-qualifying-type
+@mixin transition($transition...) {
+    @if $enable-transitions {
+        @if length($transition)==0 {
+            transition: $transition-base;
+        }
+        @else {
+            transition: $transition;
+        }
+    }
+}
+
+.fade {
+    opacity: 0;
+    @include transition($transition-fade);
+    &.show {
+        opacity: 1;
+    }
+}
+
+.collapse {
+    display: none;
+    &.show {
+        display: block;
+    }
+}
+
+tr {
+    &.collapse.show {
+        display: table-row;
+    }
+}
+
+tbody {
+    &.collapse.show {
+        display: table-row-group;
+    }
+}
+
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    @include transition($transition-collapse);
+}
+
+// stylelint-disable indentation
+@mixin hover {
+    // TODO: re-enable along with mq4-hover-shim
+    //  @if $enable-hover-media-query {
+    //    // See Media Queries Level 4: https://drafts.csswg.org/mediaqueries/#hover
+    //    // Currently shimmed by https://github.com/twbs/mq4-hover-shim
+    //    @media (hover: hover) {
+    //      &:hover { @content }
+    //    }
+    //  }
+    //  @else {
+    &:hover {
+        @content;
+    }
+    //  }
+}
+
+@mixin hover-focus {
+    @if $enable-hover-media-query {
+        &:focus {
+            @content;
+        }
+        @include hover {
+            @content;
+        }
+    }
+    @else {
+        &:focus,
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin plain-hover-focus {
+    @if $enable-hover-media-query {
+        &,
+        &:focus {
+            @content;
+        }
+        @include hover {
+            @content;
+        }
+    }
+    @else {
+        &,
+        &:focus,
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin hover-focus-active {
+    @if $enable-hover-media-query {
+        &:focus,
+        &:active {
+            @content;
+        }
+        @include hover {
+            @content;
+        }
+    }
+    @else {
+        &:focus,
+        &:active,
+        &:hover {
+            @content;
+        }
+    }
+}
+
+// Image Mixins
+// - Responsive image
+// - Retina image
+// Responsive image
+//
+// Keep images from scaling beyond the width of their parents.
+@mixin img-fluid {
+    // Part 1: Set a maximum relative to the parent
+    max-width: 100%;
+    // Part 2: Override the height to auto, otherwise images will be stretched
+    // when setting a width and height attribute on the img element.
+    height: auto;
+}
+
+// Retina image
+//
+// Short retina mixin for setting background-image and -size.
+// stylelint-disable indentation, media-query-list-comma-newline-after
+@mixin img-retina($file-1x, $file-2x, $width-1x, $height-1x) {
+    background-image: url($file-1x);
+    // Autoprefixer takes care of adding -webkit-min-device-pixel-ratio and -o-min-device-pixel-ratio,
+    // but doesn't convert dppx=>dpi.
+    // There's no such thing as unprefixed min-device-pixel-ratio since it's nonstandard.
+    // Compatibility info: https://caniuse.com/#feat=css-media-resolution
+    @media only screen and (min-resolution: 192dpi), // IE9-11 don't support dppx
+    only screen and (min-resolution: 2dppx) {
+        // Standardized
+        background-image: url($file-2x);
+        background-size: $width-1x $height-1x;
+    }
+}
+
+// Single side border-radius
+@mixin border-radius($radius: $border-radius) {
+    @if $enable-rounded {
+        border-radius: $radius;
+    }
+}
+
+@mixin border-top-radius($radius) {
+    @if $enable-rounded {
+        border-top-left-radius: $radius;
+        border-top-right-radius: $radius;
+    }
+}
+
+@mixin border-right-radius($radius) {
+    @if $enable-rounded {
+        border-top-right-radius: $radius;
+        border-bottom-right-radius: $radius;
+    }
+}
+
+@mixin border-bottom-radius($radius) {
+    @if $enable-rounded {
+        border-bottom-right-radius: $radius;
+        border-bottom-left-radius: $radius;
+    }
+}
+
+@mixin border-left-radius($radius) {
+    @if $enable-rounded {
+        border-top-left-radius: $radius;
+        border-bottom-left-radius: $radius;
+    }
+}
+
+@mixin box-shadow($shadow...) {
+    @if $enable-shadows {
+        box-shadow: $shadow;
+    }
+}

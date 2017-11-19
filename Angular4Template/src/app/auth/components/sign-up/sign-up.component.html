@@ -1,0 +1,65 @@
+<div class="row register-container" [@routerTransition] data-hook="">
+    <div id="content" class="col-sm-12" data-hook="">
+        <div class="col-md-5 col-centered">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Signup to {{title}}</h3>
+                </div>
+
+                <form class="register-register-form" novalidate="" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                    <fieldset class="register-input-container">
+
+                        <div class="register-input-item">
+                            <input type="email" class="register-user-input" name="emailAddress" formControlName="emailAddress" placeholder="Your Email Address" autocomplete="off">
+                            <div *ngIf="signUpForm.get('emailAddress').errors && signUpForm.get('emailAddress').touched">
+                                <span class="register-error-icon">!</span>
+                                <p class="register-error-message">{{signUpForm.get('emailAddress').errors.msg || 'Please enter a valid email id'}}</p>
+                            </div>
+                        </div>
+                        <div class="register-input-item">
+                            <input type="text" class="register-user-input" name="firstName" formControlName="firstName" placeholder="Your First Name" autocomplete="off">
+                            <div *ngIf="signUpForm.get('firstName').errors && signUpForm.get('firstName').touched">
+                                <span class="register-error-icon">!</span>
+                                <p class="register-error-message">{{signUpForm.get('firstName').errors.msg || 'Please enter first name'}}</p>
+                            </div>
+                        </div>
+                        <div class="register-input-item">
+                            <input type="text" class="register-user-input" name="lastName" formControlName="lastName" placeholder="Your Last Name" autocomplete="off">
+                            <div *ngIf="signUpForm.get('lastName').errors && signUpForm.get('lastName').touched">
+                                <span class="register-error-icon">!</span>
+                                <p class="register-error-message">{{signUpForm.get('lastName').errors.msg || 'Please enter last name'}}</p>
+                            </div>
+                        </div>
+
+                        <div class="register-input-item">
+                            <input type="password" class=" register-user-input" name="password" formControlName="password" placeholder="Choose Password" autocomplete="off">
+                            <div *ngIf="signUpForm.get('password').errors && signUpForm.get('password').touched">
+                                <span class="register-error-icon">!</span>
+                                <p class="register-error-message">{{signUpForm.get('password').errors.msg || 'Password must be at least 6 characters'}}</p>
+                            </div>
+                        </div>
+
+                        <div class="register-input-item">
+                            <input type="password" class="register-user-input" name="passwordConfirmation" formControlName="passwordConfirmation" placeholder="Confirm Password" autocomplete="off">
+                            <div *ngIf="(signUpForm.get('passwordConfirmation').errors || signUpForm.hasError('mismatchedPasswords')) && signUpForm.get('passwordConfirmation').touched">
+                                <span class="register-error-icon">!</span>
+                                <p class="register-error-message">{{ 'Password must match'}}</p>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="register-register-button-container">
+                        <button class="btn btn-danger register-register-button">REGISTER</button>
+                    </fieldset>
+                </form>
+                <div class="register-link-container">
+                    <small>
+              <div class="register-login-link">
+                <span class="register-info-text">Already have an account?</span>
+                <a class="register-create-account-link register-link text-danger" [routerLink]="['/auth','login']">Login!</a>
+              </div>
+            </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
